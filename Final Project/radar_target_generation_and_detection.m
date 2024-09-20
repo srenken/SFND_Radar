@@ -76,14 +76,18 @@ td=zeros(1,length(t));
 %% Signal generation and Moving Target simulation
 % Running the radar scenario over the time. 
 
-
+% loop over all sample steps
 for i=1:length(t)         
     
     
     % *%TODO* :
     %For each time stamp update the Range of the Target for constant velocity. 
+    
+    % first loop iteration: set range to initial target range
     if i == 1
         r_t(i) = range_target_init;
+
+    % Update range of the targt with velocity with distance driven during delta time
     else
         r_t(i) = r_t(i-1) + v_target_init * ( t(i)-t(i-1) );
     end
