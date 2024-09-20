@@ -281,3 +281,8 @@ Gd = 8;
 offset = 8;
 ```
 ![RDM CA-CFAR filtered](images/RDM_filtered.png)
+
+
+#### Steps taken to suppress the non-thresholded cells at the edges
+
+Therefore the the overall output (filtered RDM ```CFAR```) is first initialized with zeros. While sliding over all CUT a margin of the size of Training + Gruad Cells (depending on the dimension, either Range or Velocity) is substracted for the indices that are looped over. 
