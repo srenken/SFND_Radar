@@ -137,7 +137,7 @@ subplot(2,1,1)
  % *%TODO* :
  % plot FFT output 
 
-f = (0:(Nr/2)); 
+f = (0:(Nr/2)); % limit frequency to half of the spectrum for plotting
 plot(f, signal_fft_p1);
  
 axis ([0 200 0 0.5]);
